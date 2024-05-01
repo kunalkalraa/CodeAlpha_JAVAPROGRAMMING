@@ -1,7 +1,6 @@
 Q) A Simple Banking Application in Java is an ideal project for coding beginners. It covers fundamental concepts like the Scanner class for input, strings, loops, methods, 
 and conditional statements. This project involves basic banking operations such as deposits, withdrawals, checking balances, and exiting the program.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 REMARK:This program provides a simple console-based interface for banking operations. Users can deposit, withdraw, check balance, and exit the program.
 It utilizes a static variable balance to store the account balance and provides methods to perform banking operations accordingly.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
