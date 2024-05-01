@@ -1,0 +1,60 @@
+Q) Create a travel itinerary planner that allows users to input destinations, dates, and preferences to generate a detailed travel plan. Include features like maps, weather information, and budget calculations.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+REMARK: This program allows users to input destinations, dates, and preferences such as transportation mode and budget per day. It then generates a travel plan with estimated costs for each destination. 
+In a real-world scenario, you would replace the calculateEstimatedCost method with logic to fetch actual travel costs from an external source like an API. Additionally, you might integrate APIs for maps and 
+weather forecasts to enhance the planner's functionality.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CODE:
+---------
+import java.util.Scanner;
+
+public class TravelItineraryPlanner {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input destinations and dates
+        System.out.println("Welcome to Travel Itinerary Planner!");
+        System.out.print("Enter number of destinations: ");
+        int numDestinations = scanner.nextInt();
+
+        String[] destinations = new String[numDestinations];
+        String[] dates = new String[numDestinations];
+
+        for (int i = 0; i < numDestinations; i++) {
+            System.out.print("Enter destination " + (i + 1) + ": ");
+            destinations[i] = scanner.next();
+            System.out.print("Enter date for destination " + (i + 1) + " (MM/DD/YYYY): ");
+            dates[i] = scanner.next();
+        }
+
+        // Input preferences
+        System.out.println("\nPlease enter your preferences:");
+        System.out.print("Preferred mode of transportation: ");
+        String transportation = scanner.next();
+        System.out.print("Maximum budget per day (in USD): ");
+        double budgetPerDay = scanner.nextDouble();
+
+        // Output travel plan
+        System.out.println("\nYour Travel Plan:");
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("Destination\tDate\t\tMode of Transportation\tEstimated Cost");
+        System.out.println("-----------------------------------------------------------------");
+
+        double totalCost = 0;
+        for (int i = 0; i < numDestinations; i++) {
+            double estimatedCost = calculateEstimatedCost(budgetPerDay);
+            totalCost += estimatedCost;
+            System.out.println(destinations[i] + "\t" + dates[i] + "\t" + transportation + "\t\t\t$" + estimatedCost);
+        }
+
+        System.out.println("\nTotal Estimated Cost for the Trip: $" + totalCost);
+    }
+
+    // Dummy method to calculate estimated cost
+    private static double calculateEstimatedCost(double budgetPerDay) {
+        // For demonstration, a random cost is generated based on the budget per day
+        return Math.random() * budgetPerDay * 2; // Assuming the cost can be double the budget per day
+    }
+}
