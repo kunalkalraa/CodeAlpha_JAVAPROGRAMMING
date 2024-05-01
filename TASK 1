@@ -1,0 +1,54 @@
+Q) Develop a program that allows a teacher to enter students' grades and compute their average, highest, and lowest scores. You can use arrays or ArrayLists to store the student data.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+REMARK:This program first prompts the user to input grades. It continues to accept grades until the user enters -1 to signal the end of input. Then it calculates the average, highest,
+and lowest grades from the entered grades using ArrayList. Finally, it prints out the computed results.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+CODE:
+--------
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GradeCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> grades = new ArrayList<>();
+
+        // Input loop to get grades from the user
+        while (true) {
+            System.out.print("Enter a grade (or -1 to finish): ");
+            int grade = scanner.nextInt();
+            if (grade == -1) {
+                break;
+            }
+            grades.add(grade);
+        }
+
+        // Calculate average
+        double sum = 0;
+        for (int grade : grades) {
+            sum += grade;
+        }
+        double average = sum / grades.size();
+
+        // Find highest and lowest grades
+        int highest = grades.get(0);
+        int lowest = grades.get(0);
+        for (int i = 1; i < grades.size(); i++) {
+            int currentGrade = grades.get(i);
+            if (currentGrade > highest) {
+                highest = currentGrade;
+            }
+            if (currentGrade < lowest) {
+                lowest = currentGrade;
+            }
+        }
+
+        // Output results
+        System.out.println("Average grade: " + average);
+        System.out.println("Highest grade: " + highest);
+        System.out.println("Lowest grade: " + lowest);
+    }
+}
+
