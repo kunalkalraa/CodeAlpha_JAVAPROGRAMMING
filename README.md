@@ -1,6 +1,6 @@
 TASK 1:
 --------
-Certainly! Below is a README template for the program:
+README template for the program:
 
 ---
 
@@ -76,7 +76,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 TASK 2:
 ---------
-Certainly! Below is a README template for the Simple Banking Application:
+README template for the Simple Banking Application:
 
 ---
 
@@ -168,7 +168,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 TASK 3:
 ---------
-Below is a template for the README file of the travel itinerary planner:
+README file of the travel itinerary planner:
 
 ---
 
